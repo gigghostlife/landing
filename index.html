@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GiggHost - Master AI Money Making</title>
+    <title>GigGhost - Master AI Money Making</title>
     <style>
         * {
             margin: 0;
@@ -279,35 +279,6 @@
             font-size: 0.9rem;
         }
 
-        /* MailerLite Integration Styles */
-        .ml-form-embedContainer {
-            width: 100%;
-        }
-
-        .ml-block-form {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        .ml-form-successBody {
-            background: rgba(0, 212, 255, 0.1);
-            border: 1px solid rgba(0, 212, 255, 0.3);
-            border-radius: 12px;
-            padding: 30px;
-            text-align: center;
-        }
-
-        .ml-form-successBody h3 {
-            color: #00d4ff;
-            margin-bottom: 10px;
-        }
-
-        .ml-form-successBody p {
-            color: #d1d5db;
-            margin: 0;
-        }
-
         /* Responsive Design */
         @media (max-width: 768px) {
             .main-card {
@@ -378,28 +349,24 @@
                 Instant access to proven AI money-making strategies, tools, and step-by-step guides. No fluff, just actionable methods that work in 2025.
             </p>
             
-            <!-- MailerLite Embedded Form Container -->
-            <div id="mlb2-YOUR_FORM_ID" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-Q2GFMc">
-                <!-- Fallback form for when JavaScript is disabled -->
-                <form class="email-form ml-block-form" action="https://static.mailerlite.com/webforms/submit/Q2GFMc" method="post" target="_blank">
-                    <div class="form-group">
-                        <input type="email" name="fields[email]" class="form-input" placeholder="Enter your email address" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" name="fields[name]" class="form-input" placeholder="First name (optional)">
-                    </div>
-                    <input type="hidden" name="ml-submit" value="1">
-                    <button type="submit" class="submit-btn">Get Free Handbook Now</button>
-                </form>
-                
-                <!-- Success message -->
-                <div class="ml-form-successBody" style="display: none;">
-                    <div style="text-align: center; padding: 20px; color: #00d4ff;">
-                        <h3>🎉 Success! Check your email</h3>
-                        <p>Your free AI handbook is on its way. Don't forget to check your spam folder!</p>
-                    </div>
+            <!-- Simple MailerLite Form (Easy Setup) -->
+            <form class="email-form" action="https://assets.mailerlite.com/jsonp/1612400/forms/Q2GFMc/subscribe" method="post">
+                <div class="form-group">
+                    <input type="email" name="fields[email]" class="form-input" placeholder="Enter your email address" required>
                 </div>
-            </div>
+                <div class="form-group">
+                    <input type="text" name="fields[name]" class="form-input" placeholder="First name (optional)">
+                </div>
+                <input type="hidden" name="ml-submit" value="1">
+                <input type="hidden" name="anticsrf" value="true">
+                <button type="submit" class="submit-btn">Get Free Handbook Now</button>
+                
+                <!-- Success Message -->
+                <div class="success-message" style="display: none; margin-top: 20px; padding: 20px; background: rgba(0, 212, 255, 0.1); border: 1px solid rgba(0, 212, 255, 0.3); border-radius: 12px; text-align: center;">
+                    <h3 style="color: #00d4ff; margin-bottom: 10px;">🎉 Success! Check your email</h3>
+                    <p style="color: #d1d5db; margin: 0;">Your free AI handbook is on its way. Don't forget to check your spam folder!</p>
+                </div>
+            </form>
         </div>
 
         <section class="features">
@@ -423,76 +390,48 @@
         <section class="trust-section">
             <p class="trust-text">Trusted by AI entrepreneurs worldwide</p>
             <div class="social-proof">
-                <span class="proof-item">✓ 10,000+ Downloads</span>
+                <span class="proof-item">✓ 1,000+ Downloads</span>
                 <span class="proof-item">✓ Zero Spam Promise</span>
                 <span class="proof-item">✓ Instant Delivery</span>
             </div>
         </section>
     </div>
 
-    <!-- MailerLite Universal Script (Replace YOUR_ACCOUNT_ID with your actual account ID) -->
     <script>
-        (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
-        .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
-        n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
-        (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
-        ml('account', '1612400');
-    </script>
-
-    <script>
-        // Add smooth scroll behavior and form enhancements
         document.addEventListener('DOMContentLoaded', function() {
-            // Add loading state to form submission
-            const form = document.querySelector('.ml-block-form');
+            const form = document.querySelector('.email-form');
             const submitBtn = document.querySelector('.submit-btn');
+            const successMessage = document.querySelector('.success-message');
             const originalText = submitBtn.textContent;
-            const successBody = document.querySelector('.ml-form-successBody');
-            const formContainer = document.querySelector('.ml-form-embedContainer');
 
-            if (form && submitBtn) {
-                form.addEventListener('submit', function(e) {
-                    e.preventDefault();
-                    
-                    submitBtn.textContent = 'Sending...';
-                    submitBtn.style.opacity = '0.7';
-                    submitBtn.disabled = true;
-                    
-                    // Get form data
-                    const formData = new FormData(form);
-                    
-                    // Submit to MailerLite
-                    fetch(form.action, {
-                        method: 'POST',
-                        body: formData,
-                        mode: 'no-cors'
-                    }).then(() => {
-                        // Show success message
-                        form.style.display = 'none';
-                        successBody.style.display = 'block';
-                        
-                        // Track the conversion if you have analytics
-                        if (typeof gtag !== 'undefined') {
-                            gtag('event', 'conversion', {
-                                'event_category': 'Email Signup',
-                                'event_label': 'AI Handbook'
-                            });
-                        }
-                    }).catch(() => {
-                        // Reset form on error
-                        submitBtn.textContent = originalText;
-                        submitBtn.style.opacity = '1';
-                        submitBtn.disabled = false;
-                        alert('There was an error. Please try again.');
-                    });
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Show loading state
+                submitBtn.textContent = 'Sending...';
+                submitBtn.style.opacity = '0.7';
+                submitBtn.disabled = true;
+                
+                // Get form data
+                const formData = new FormData(form);
+                
+                // Submit to MailerLite (replace ACCOUNT_ID and FORM_ID with your actual values)
+                fetch(form.action, {
+                    method: 'POST',
+                    body: formData,
+                    mode: 'no-cors'
+                }).then(() => {
+                    // Show success message
+                    form.style.display = 'none';
+                    successMessage.style.display = 'block';
+                }).catch(() => {
+                    // Reset on error
+                    submitBtn.textContent = originalText;
+                    submitBtn.style.opacity = '1';
+                    submitBtn.disabled = false;
+                    alert('There was an error. Please try again.');
                 });
-            }
-        });
-    </script>
-
-    <!-- MailerLite Form Script (Replace YOUR_FORM_ID with your actual form ID) -->
-    <script>
-        ml('show', 'Q2GFMc', {
-            'embedId': 'mlb2-Q2GFMc'
+            });
         });
     </script>
 </body>
